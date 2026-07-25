@@ -1,0 +1,264 @@
+/* ==========================================================================
+   DEATH BEACH - ESTILOS CSS (GÓTICO MINIMALISTA)
+   ========================================================================== */
+
+/* Importación de fuentes de Google Fonts:
+   - 'Cinzel' para encabezados (estilizada, clásica y de toque gótico/elegante)
+   - 'Inter' para texto plano (limpia y minimalista) */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500&display=swap');
+
+/* Reset global y variables de color */
+:root {
+  --bg-color: #0c0d0e;          /* Negro mate profundo */
+  --card-bg: #141618;           /* Gris muy oscuro para contenedores */
+  --text-main: #e2e8f0;         /* Gris claro para alta legibilidad */
+  --text-muted: #8c96a3;        /* Gris medio para descripciones */
+  --accent-gothic: #8b0000;     /* Rojo borgoña / vino tinto para acentos */
+  --accent-hover: #b22222;      /* Rojo carmesí al pasar el cursor */
+  --border-color: #26292d;      /* Borde fino sutil */
+  --border-glow: #3a3f47;       /* Borde para hover */
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   ENCABEZADO Y NAVEGACIÓN
+   ========================================================================== */
+header {
+  text-align: center;
+  padding: 40px 0 20px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 40px;
+}
+
+/* Contenedor para centrar el logo */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Estilos para el logo centrado */
+.site-logo {
+  max-width: 280px;          /* Ajusta este valor según el tamaño que prefieras */
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;         /* Un leve redondeado si deseas acoplarlo al diseño */
+  box-shadow: 0 0 15px rgba(139, 0, 0, 0.2); /* Sutil resplandor borgoña */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el cursor sobre el logo */
+.site-logo:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(178, 34, 34, 0.4);
+}
+
+header h4 {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px 25px;
+  list-style: none;
+}
+
+nav a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent-gothic);
+}
+
+/* ==========================================================================
+   SECCIONES GENERALES
+   ========================================================================== */
+section {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: #ffffff;
+  border-bottom: 1px solid var(--accent-gothic);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS DEL MENÚ DE COMIDAS (GÓTICO MINIMALISTA)
+   ========================================================================== */
+#menu h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--text-main);
+  margin: 30px 0 15px 0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#menu h3::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+/* Estilo para las listas de platillos y bebidas */
+#menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Cada ítem del menú se comporta como una fila elegante */
+#menu ul li {
+  font-size: 0.95rem;
+  padding: 10px 14px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid transparent;
+  border-left: 2px solid var(--accent-gothic); /* Detalle lateral gótico */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+
+/* Efecto Hover minimalista */
+#menu ul li:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: var(--border-glow);
+  border-left-color: var(--accent-hover);
+  transform: translateX(4px);
+}
+
+/* Artículos dentro del menú */
+.menu-category {
+  margin-bottom: 30px;
+}
+
+/* Contenedor de las imágenes con recorte de cuadrícula */
+.menu-img-container {
+  margin-top: 20px;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.menu-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(30%) contrast(110%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.menu-img-container:hover .menu-img {
+  filter: grayscale(0%);
+  transform: scale(1.03);
+}
+
+/* Ajustes de encuadre utilizando la imagen compuesta (Comidas.png) */
+.menu-img.main-dishes {
+  object-fit: cover;
+  object-position: top center;
+  height: 100%;
+}
+
+.menu-img.drinks {
+  object-fit: cover;
+  object-position: bottom left;
+  height: 100%;
+}
+
+.menu-img.beers {
+  object-fit: cover;
+  object-position: bottom right;
+  height: 100%;
+}
+
+/* ==========================================================================
+   SECCIÓN DE CONTACTO Y PIE DE PÁGINA
+   ========================================================================== */
+#contactos div {
+  margin-top: 15px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border-left: 2px solid var(--border-color);
+}
+
+#contactos h3 {
+  font-size: 1rem;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+#contactos a {
+  color: var(--accent-gothic);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#contactos a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 0;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
